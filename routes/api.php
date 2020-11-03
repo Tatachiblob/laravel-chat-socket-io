@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('public-event', function () {
+    event(new \App\Events\PublicEvent);
+    return 'public';
+});
