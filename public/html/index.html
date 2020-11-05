@@ -1,6 +1,16 @@
-@extends('layouts.app')
-
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
+    <!--  All snippets are MIT license http://bootdey.com/license -->
+    <title>bs4 simple chat app - Bootdey.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/chat.css" rel="stylesheet">
+</head>
+<body>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
 
     <!-- Content wrapper start -->
@@ -96,7 +106,7 @@
                                 <span>To: <span class="name">Emily Russell</span></span>
                             </div>
                             <div class="chat-container">
-                                <ul id="test" class="chat-box chatContainerScroll">
+                                <ul class="chat-box chatContainerScroll">
                                     <li class="chat-left">
                                         <div class="chat-avatar">
                                             <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
@@ -178,25 +188,10 @@
     <!-- Content wrapper end -->
 
 </div>
-@endsection
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
 
-@push('script')
-<script>
-//Subscribe to Test Channel
-Echo.channel('public-event')
-    .listen('PublicEvent', (e) => {
-        console.log(e);
-
-        var a = `<li class="chat-left">
-                    <div class="chat-avatar">
-                        <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
-                        <div class="chat-name">Russell</div>
-                    </div>
-                    <div class="chat-text">${e.message}</div>
-                    <div class="chat-hour">07:00 <span class="fa fa-check-circle"></span></div>
-                </li>`;
-
-        $(a).appendTo('#test');
-    });
 </script>
-@endpush
+</body>
+</html>
